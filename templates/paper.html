@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-md-8">
+{% if paper %}
+  <h1>{{ paper.title }}</h1>
+  <h4>{{ ", ".join(paper.authors) }}</h4>
+  <div>
+    DOI: <a href="http://oadoi.org/{{ paper.doi }}" style="color: green;">{{ paper.doi }}</a>
+    <br>Journal: {{ paper.journal }}
+    <br>Publisher: {{ paper.publisher }}
+    <br>Subject Area: {{ paper.topic and ', '.join(paper.topic) }}
+    <br>Date: {{ paper.date | strftime }}
+  </div>
+{% else %}
+  <div class="alert alert-error" role="alert">
+    <p>Couldn't find metadata for this identifier: <code>{{ lookup.identifier }}</code></p>
+    <p>Try:</p>
+    <ul>
+      <li>Look for fulltext on <a href="https://oadoi.org/{{lookup.identifier}}">oadoi.org</a></li>
+      <li>Resolve DOI on <a href="https://doi.org/{{lookup.identifier}}">doi.org</a></li>
+      <li>Search <a href="https://scholar.google.com/scholar?q={{lookup.identifier}}">Google Scholar</a></li>
+    </ul>
+  </div>
+{% endif %}
+
+<br>
+<h4>All Crawled and Archived Copies</h4>
+{% if files %}
+  <table class="table table-hover">
+  <tr>
+    <th>File SHA-1</th>
+    <th>Filetype</th>
+    <th>Link</th>
+  </tr>
+  {% for file in files %}
+    {% for link in file.links %}
+      <tr>
+        <td><code>{{ file.sha1 | truncate }}</code></td>
+        <td><code>{{ file.mimetype or "unknown" }}</code></td>
+        <td><a href="{{ link.url }}">{{ link.domain }}</a>
+      </tr>
+    {% else %}
+      <tr>
+        <td><code>{{ file.sha1 | truncate }}</code></td>
+        <td><code>{{ file.mimetype or "unknown" }}</code></td>
+        <td>N/A</a>
+      </tr>
+    {% endfor %}
+  {% endfor %}
+  </table>
+{% else %}
+  <div class="alert alert-warning" role="alert">No files found</div>
+{% endif %}
+</ul>
+</div>
+<div class="col-md-4" style="padding-top: 1em;">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      {% if best_pdf_url %}
+      <a class="btn btn-lg btn-success btn-block" role="button" href="{{ best_pdf_url }}">
+        <img src="/static/pdf_icon.svg" alt="pdf icon" style="height: 1.5em; padding-right: 0.5em;">Download PDF</a>
+      {# TODO: Need to include javascript for this sort of pulldown
+	  <div class="btn-group">
+	    <button type="button" class="btn btn-lg btn-danger">Download</button>
+	    <button type="button" class="btn btn-lg btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <span class="caret"></span>
+		  <span class="sr-only">Toggle Dropdown</span>
+	    </button>
+	    <ul class="dropdown-menu">
+		  <li><a href="#">Action</a></li>
+		  <li><a href="#">Another action</a></li>
+		  <li><a href="#">Something else here</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Separated link</a></li>
+	    </ul>
+      </div>
+      #}
+      {% else %}
+      <a class="btn btn-lg btn-default btn-block disabled" role="button" href="#">PDF Not Available</a>
+      {% endif %}
+
+      {% if best_html_url %}
+      <br/>
+      <a class="btn btn-lg btn-success btn-block" role="button" href="{{ best_html_url }}">Read online</a>
+      {% endif %}
+
+      {% if archive_item_url %}
+      <br/>
+      <a class="btn btn-lg btn-success btn-block" role="button" href="{{ archive_item_url }}">Read on archive.org</a>
+      {% endif %}
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="https://oadoi.org/{{paper.doi or lookup.identifier}}">oaDOI Lookup</a>
+      </li>
+      <li class="list-group-item">
+        <a href="https://doi.org/{{paper.doi or lookup.identifier}}">doi.org Lookup</a>
+      </li>
+      <li class="list-group-item">
+        <a href="https://scholar.google.com/scholar?q={{paper.doi or lookup.identifier}}">Search Google Scholar</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

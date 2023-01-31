@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>HTTP API Documentation</h1>
+
+<h2>Search and Lookup API</h2>
+<p>Still a work in progress (and thus undocumented), but most of the REST
+endpoints (eg, <code>/search?q=blood</code>,
+<code>/id/doi/10.000/whatever</code>,
+<code>/files/sha1/598eae248c541f1c2c51e4f3785a76dbc62acd6c</code>) can be
+accessed with an HTTP Accept header of <code>application/json</code> to get JSON. Eg:
+</p>
+
+<pre>curl -H "Accept: application/json" 'http://localhost:6969/search?q=heart'</pre>
+
+{% endblock %}

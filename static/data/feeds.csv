@@ -1,0 +1,7 @@
+title,description,icon,url,tags,user,bakey
+"A","<p>twitter</p>","","http://127.0.0.1:6969/static/data/mrss.rss",["social"],"",""
+"B","<p>cnn</p>","","http://rss.cnn.com/rss/edition.rss",["news"],"",""
+"C","<p>absinthe</p>","","https://origin.svmcdn2.com/feeds/absinthe/absinthe-three.xml",["sport"],"",""
+"Beauty TV - Clarins",https://front.video.funke.press/api_v3/getFeed.php?partnerId=110&feedId=0_lz90zvsl,["?"],"",""
+"Motorvision":"https://xml-ott.motorvision.tv/getreferencedobjects?version=14&image_format=widescreen&image_width=1920&start=0&max=300&max_bitrate=2500&object_type=video&rss_format=mrss&language=de&synd_partner_dist_chan_id=24&partner=funke&token=EJNuSBOTAtUhcM8&download_url=1&tags=16&order=random",["?"],"",""
+"Rocket Beans - Endgegner":"https://distribution.rocketmgmt.de/feeds/tvplus_endgegner_rss.xml",["?"],"",""

@@ -1,0 +1,530 @@
+<rss version="2.0" xmlns:studio="http://studio.twitter.com/rss" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+      <channel>
+        <title>Twitter Media Studio</title>
+        <link>https://studio.twitter.com</link>
+        <description>Media Studio Library</description>
+        <atom:link href="https://studio.twitter.com/1/library/mrss.xml?owner_id=264579898" rel="self"/>
+        <atom:link href="https://studio.twitter.com/1/library/mrss.xml?owner_id=264579898&amp;media_key_offset=7_1615451660867756068" rel="next"/>
+        <item>
+              <guid isPermaLink="false">7_1617118303683477505</guid>
+              <title>7_1617118303683477505</title>
+              
+              <pubDate>Sun, 22 Jan 2023 11:13:42 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1617118303683477505/pu/vid/498x286/Hs1s1jKmfiHd8noh.mp4?tag=12" duration="7950" type="video/mp4" bitrate="256000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1617118303683477505/pu/img/Nq_IevQKPJMdbGpl.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-22 11:13:47 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1617079553276448768</guid>
+              <title>7_1617079553276448768</title>
+              
+              <pubDate>Sun, 22 Jan 2023 08:39:44 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1617079553276448768/pu/vid/720x720/5a4qu6OaLJPhFTbB.mp4?tag=12" duration="109992" type="video/mp4" bitrate="1280000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1617079553276448768/pu/img/hiZlQEyJJFoFBTm_.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-22 08:42:02 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">3_1617077484654133255</guid>
+              <title>3_1617077484654133255</title>
+              
+              <pubDate>Sun, 22 Jan 2023 08:31:30 +0000</pubDate>
+              <media:content url="https://pbs.twimg.com/media/FnEDZ5cXgAczAgS.jpg" duration="" type="image/jpeg" bitrate="">
+                
+              </media:content>
+              <atom:updated><![CDATA[2023-01-22 08:33:43 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1617068390958383105</guid>
+              <title>7_1617068390958383105</title>
+              
+              <pubDate>Sun, 22 Jan 2023 07:55:22 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1617068390958383105/pu/vid/1266x720/LFXpbBnELqpiODIa.mp4?tag=12" duration="47783" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1617068390958383105/pu/img/bmNRi-LkdrlEoXET.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-22 07:56:30 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">3_1616906742008250370</guid>
+              <title>3_1616906742008250370</title>
+              
+              <pubDate>Sat, 21 Jan 2023 21:13:02 +0000</pubDate>
+              <media:content url="https://pbs.twimg.com/media/FnBoHXhWAAIPflM.jpg" duration="" type="image/jpeg" bitrate="">
+                
+              </media:content>
+              <atom:updated><![CDATA[2023-01-21 21:14:43 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1616897267146833920</guid>
+              <title>7_1616897267146833920</title>
+              
+              <pubDate>Sat, 21 Jan 2023 20:35:23 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1616897267146833920/pu/vid/780x720/xoh9fs-OS9YeaaWo.mp4?tag=12" duration="21650" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1616897267146833920/pu/img/l8SnQ7WySy3m1T-K.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-21 20:37:58 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">16_1616847627609325570</guid>
+              <title>16_1616847627609325570</title>
+              
+              <pubDate>Sat, 21 Jan 2023 17:18:08 +0000</pubDate>
+              <media:content url="https://video.twimg.com/tweet_video/FnAyWdOWQAIaWWR.mp4" duration="" type="video/mp4" bitrate="0">
+                <media:thumbnail url="https://pbs.twimg.com/tweet_video_thumb/FnAyWdOWQAIaWWR.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-21 17:18:11 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1616776574711349248</guid>
+              <title>7_1616776574711349248</title>
+              
+              <pubDate>Sat, 21 Jan 2023 12:35:48 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1616776574711349248/pu/vid/1280x720/1abamTWmg3-Cbhx-.mp4?tag=12" duration="94969" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1616776574711349248/pu/img/RWTeaMJ-wbT4eo3M.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-21 12:36:12 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">3_1616754144521457666</guid>
+              <title>3_1616754144521457666</title>
+              
+              <pubDate>Sat, 21 Jan 2023 11:06:40 +0000</pubDate>
+              <media:content url="https://pbs.twimg.com/media/Fm_dVBlXkAIkmYN.png" duration="" type="image/png" bitrate="">
+                
+              </media:content>
+              <atom:updated><![CDATA[2023-01-21 11:06:48 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1616506157597708288</guid>
+              <title>7_1616506157597708288</title>
+              
+              <pubDate>Fri, 20 Jan 2023 18:41:15 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1616506157597708288/pu/vid/1266x720/0hru7S11Xhhg0tKv.mp4?tag=12" duration="47783" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1616506157597708288/pu/img/nJcdy5ilO20LU4Th.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-20 18:42:10 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">3_1616501610384969730</guid>
+              <title>3_1616501610384969730</title>
+              
+              <pubDate>Fri, 20 Jan 2023 18:23:11 +0000</pubDate>
+              <media:content url="https://pbs.twimg.com/media/Fm73pmnX0AIWycs.jpg" duration="" type="image/jpeg" bitrate="">
+                
+              </media:content>
+              <atom:updated><![CDATA[2023-01-20 18:23:52 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615849406804246530</guid>
+              <title>7_1615849406804246530</title>
+              
+              <pubDate>Wed, 18 Jan 2023 23:11:34 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615849406804246530/pu/vid/640x358/k3v8UzB9E4_2hKI2.mp4?tag=12" duration="94969" type="video/mp4" bitrate="832000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615849406804246530/pu/img/cdzFqKnakzRX6EVO.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 23:11:44 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615840215389569025</guid>
+              <title>7_1615840215389569025</title>
+              
+              <pubDate>Wed, 18 Jan 2023 22:35:02 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615840215389569025/pu/vid/1280x720/hTr1JWnSO_tYX-Vf.mp4?tag=12" duration="40007" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615840215389569025/pu/img/ke2WydcicHDLGP3L.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 22:37:54 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">3_1615837675721826304</guid>
+              <title>3_1615837675721826304</title>
+              
+              <pubDate>Wed, 18 Jan 2023 22:24:57 +0000</pubDate>
+              <media:content url="https://pbs.twimg.com/media/FmybzhQXoAAD9aT.jpg" duration="" type="image/jpeg" bitrate="">
+                
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 22:27:11 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615691532564107264</guid>
+              <title>7_1615691532564107264</title>
+              
+              <pubDate>Wed, 18 Jan 2023 12:44:14 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615691532564107264/pu/vid/720x1280/8B46O6N8OJ5651x2.mp4?tag=12" duration="29291" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615691532564107264/pu/img/t_Pk6na_UaFKWXZb.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 12:45:34 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615685914201571328</guid>
+              <title>7_1615685914201571328</title>
+              
+              <pubDate>Wed, 18 Jan 2023 12:21:54 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615685914201571328/pu/vid/720x1280/I0s6XXeQO9v1_BWp.mp4?tag=12" duration="138000" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615685914201571328/pu/img/eUKhqMUloyrnNOkB.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 12:22:22 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615685058085404673</guid>
+              <title>7_1615685058085404673</title>
+              
+              <pubDate>Wed, 18 Jan 2023 12:18:30 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615685058085404673/pu/vid/720x1280/zoAFz76lFJHuWdqw.mp4?tag=12" duration="138000" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615685058085404673/pu/img/X_OceYk0DL7w1tD6.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-18 12:21:04 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615466130939723777</guid>
+              <title>7_1615466130939723777</title>
+              
+              <pubDate>Tue, 17 Jan 2023 21:48:34 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615466130939723777/pu/vid/720x746/6TUA38Buc91OumkC.mp4?tag=12" duration="27566" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615466130939723777/pu/img/42FOejPNUjv5vgdD.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-17 21:50:11 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615464496771866638</guid>
+              <title>7_1615464496771866638</title>
+              
+              <pubDate>Tue, 17 Jan 2023 21:42:04 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615464496771866638/pu/vid/1280x720/kYCALT2dAU_qAUpr.mp4?tag=12" duration="92869" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615464496771866638/pu/img/mdFH9ZYgeCtl37Q5.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-17 21:42:34 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item><item>
+              <guid isPermaLink="false">7_1615451660867756068</guid>
+              <title>7_1615451660867756068</title>
+              
+              <pubDate>Tue, 17 Jan 2023 20:51:04 +0000</pubDate>
+              <media:content url="https://video.twimg.com/ext_tw_video/1615451660867756068/pu/vid/1280x720/Lyoqw5lCDdWgPBUz.mp4?tag=12" duration="25025" type="video/mp4" bitrate="2176000">
+                <media:thumbnail url="https://pbs.twimg.com/ext_tw_video_thumb/1615451660867756068/pu/img/NkIYBqw7_gvQBu2P.jpg"/>
+              </media:content>
+              <atom:updated><![CDATA[2023-01-17 20:53:57 +0000]]></atom:updated>
+              <studio:metadata embedPlayback="true">
+                <studio:filename></studio:filename>
+                <studio:cta_type></studio:cta_type>
+                <studio:cta_link></studio:cta_link>
+                <studio:geo>
+                  <studio:geo_blacklist></studio:geo_blacklist>
+                  <studio:geo_whitelist></studio:geo_whitelist>
+                </studio:geo>
+                <studio:monetization monetize="false" banned="">
+                  <studio:program_id></studio:program_id>
+                  <studio:iab_category></studio:iab_category>
+                  <studio:iab_category_blacklist></studio:iab_category_blacklist>
+                  <studio:blacklist_advertiser></studio:blacklist_advertiser>
+                  <studio:restrict_to_contries></studio:restrict_to_contries>
+                  
+                </studio:monetization>
+              </studio:metadata>
+            </item>
+      </channel>
+    </rss>

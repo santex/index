@@ -1,0 +1,6 @@
+title,description,icon,url,tags
+"A","<p>twitter</p>","","http://127.0.0.1:6969/static/data/mrss.rss",["social"]
+"B","<p>cnn</p>","","http://rss.cnn.com/rss/edition.rss",["news"]
+"C","<p>absinthe</p>","","https://origin.svmcdn2.com/feeds/absinthe/absinthe-three.xml",["sport"]
+
+

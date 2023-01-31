@@ -1,0 +1,3 @@
+content_type,title,url,user,profile
+"mp4","UFO stream","http://localhost:6969/static/uploads/default/default/6f33144a-8b9a-47de-9df6-d47fe757ba71/stream.m3u8","default","default"
+"mp4","Ship-net SDO 1600","http://161.35.14.248:8000/test/1600/800_out.m3u8","default","default"
