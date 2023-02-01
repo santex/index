@@ -2,9 +2,9 @@
 from flask import session, redirect, url_for, render_template, request
 
 import ffmpeg_streaming2
-from ffmpeg_streaming2 import Formats, Bitrate, Representation, Size
+from ffmpeg_streaming2 import Formats, Bitrate, Representation, Size, FFProbe
 
-import os, base64, json, sqlite3, urllib3, argparse, requests, io, csv, pprint
+import os, base64, json, sqlite3, urllib3, argparse, requests, io, csv, pprint, re
 import dateutil.parser
 
 from flask import Flask, request, redirect, url_for, render_template, json, jsonify, send_from_directory
@@ -20,8 +20,30 @@ from flask_sqlalchemy import SQLAlchemy
 import shutil, pprint
 from datetime import datetime
 import ffmpeg,tqdm, argparse
-from elasticsearch import Elasticsearch
-from config import *
+from elasticsearch import Elasticsearch 
+
+
+
+
+
+class Config:
+    """
+    Load environment variables and assign them to Config class
+    Make sure to add the required environment variables to .env file
+    """
+
+
+    SQLALCHEMY_DATABASE_URI = "sqlite:///data/db.sqlite3" # os.getenv("SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_TRACK_MODIFICATIONS = bool(False)
+    AWS_ACCESS_KEY = os.environ.get("AWS_ACCESS_KEY")
+    AWS_ACCESS_SECRET = os.environ.get("AWS_ACCESS_SECRET")
+    S3_BUCKET_NAME = os.environ.get("S3_BUCKET_NAME")
+    S3_BUCKET_BASE_PATH = os.environ.get("S3_BUCKET_BASE_PATH")
+    S3_BUCKET_BASE_URL = os.environ.get("S3_BUCKET_BASE_URL")
+
+
+
+
 from util import *
 
   
@@ -72,12 +94,15 @@ def hello_world():
 
 @app.route("/f2")
 def front2():
+    data=ElasticSearchUtil().callData(1000)
     conf = {'ASSET_ROOT':os.environ.get('ASSET_ROOT')}
-    return render_template('front2.html',ASSETS_ROOT=os.environ.get('ASSETS_ROOT'), data=[])
+    return render_template('front2.html',ASSETS_ROOT=os.environ.get('ASSETS_ROOT'), data=data)
 
 @app.route("/f")
 def front():
-    return render_template('front.html', data=[])
+    data=ElasticSearchUtil().callData(1000)
+    conf = {'ASSET_ROOT':os.environ.get('ASSET_ROOT')}
+    return render_template('front.html', data=data)
 
 
 @app.route("/files/<uuid>", methods=['POST','PUT','GET'])
@@ -114,6 +139,19 @@ def upload_complete(uuid):
     
     return response
 
+
+
+def prepare_probe(path,doc):
+
+
+  ffprobe= FFProbe(doc['name'])
+  
+  current_dir = path
+  ffprobe.save_as_json(os.path.join(current_dir, 'probe.json'))
+
+
+  
+  
 def prepare_hls(doc):
 
   
@@ -187,21 +225,38 @@ def upload(request,target):
               "content_length":length,
               "url":"{}/{}".format(base,destination[2:]),
               "hls":"",
+              "tags":re.findall(r'\w+', basename),
               "upload_status":200}
 
         
         new_file = File(user=user,profile=profile,name=destination,content_type=ctype,content_length=length,url=destination,upload_status=UploadStatus.PROCESSING)
         
         files.append(data)
-        db.session.add(new_file)
-        db.session.commit()
-
+        try:
+          db.session.add(new_file)
+          db.session.commit()
+        except:
+          pass
+        
               
         basen=str(data["basename"])
         if data["basename"].endswith(".mp4"):
           data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".mp4",".m3u8"))
-          ElasticSearchUtil().add_to_index("app","published",data)
           prepare_hls(data)
+          prepare_probe(data["target"],data)
+
+        if data["basename"].endswith(".mov"):
+          data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".mov",".m3u8"))
+          prepare_hls(data)
+          prepare_probe(data["target"],data)
+
+        if data["basename"].endswith(".AVI"):
+          data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".AVI",".m3u8"))
+          prepare_hls(data)
+          prepare_probe(data["target"],data)
+          
+        ElasticSearchUtil().add_to_index("app","published",data)
+        
 
 
                             
@@ -242,9 +297,9 @@ def do_search(q, limit=200,index="_all", do_highlight=False, do_files=False):
 
 
     print("Search hit: " + q)
-    if limit > 100:
+    if limit > 1000:
         # Sanity check
-        limit = 100
+        limit = 1000
 
     search_request = {
        "query" : {
@@ -452,7 +507,7 @@ def search():
         # limit must be between 0 and 100
         limit = min(max(0, limit), 100)
     except:
-        limit = 100
+        limit = 1000
 
     query = request.args.get('q')
     index = request.args.get('index')
@@ -623,9 +678,9 @@ def do_search(q, limit=200,index="_all", do_highlight=False, do_files=False):
 
 
     print("Search hit: " + q)
-    if limit > 100:
+    if limit > 1000:
         # Sanity check
-        limit = 100
+        limit = 1000
 
     search_request = {
        "query" : {

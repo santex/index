@@ -28,7 +28,19 @@
         padding-top: 20px;
         padding-bottom: 40px;
     }
+    
     /* Custom container */
+    .main-content {
+      margin: 0 auto;
+      background-color:#fff; 
+    
+    }
+    /* Custom container */
+    .app-container {
+      margin: 0 auto;
+      background-color:#fff; 
+    
+    }
     .container-narrow {
         margin: 0 auto;
         max-width: 700px;
@@ -40,7 +52,7 @@
     .error          { background: #F0D6D6; padding: 0.5em; }
   </style>
 </head>
-<body>
+<body >
   
   <hr>
      
@@ -52,7 +64,7 @@
 
     {% include 'includes/toggle-sidebar.html' %}
 
-  <div class="main-content">
+  <div class="main-content" style="">
     <div class="header">
 
       <div class="logo-wrapper">
@@ -64,6 +76,10 @@
         <div class="desktop-search search-bar">
           <input type="text" placeholder="Search" />
           <i class="material-icons">search</i>
+          <input type="hidden" placeholder="Stream" id="stream" value="" />
+          
+          <i class="material-icons">stream</i>
+          
         </div>
       </div>
 
@@ -173,117 +189,48 @@
 
     </div>
 
-    <div class="page-content">
+    <div class="page-content" >
       <div class="channel-header">
         <div class="channel-nav">
          
           <a class="active">
             <strong>20</strong>
-            <span>Videos</span>
+            <span>Streams</span>
           </a>
           <a>
             <strong>7</strong>
-            <span>Images</span>
+            <span>Videos</span>
           </a>
           <a>
             <strong>1</strong>
-            <span>Collection</span>
+            <span>Images</span>
+          </a>
+          <a>
+            <strong>4</strong>
+            <span>Investigators</span>
           </a>
         </div>
+
         <div class="channel-header-fixed-buttons">
-        </div><!-- rg-gallery -->
-    </div>
-      <div class="stream-container">
-    <div >
-  <noscript>
-      <style>
-        .es-carousel ul{
-          display:block;
-        }
-      </style>
-    </noscript>
-    
-    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">  
-      <div  style="height:auto;max-width:100%;margin:10px;"  class="rg-image-wrapper">
-
-            
-          <div class="rg-image"></div>
-          <!--iframe src="http://138.68.83.180/app/room/" frameborder="0" allowfullscreen="true" scrolling="no"></iframe //-->
-          <div class="rg-image-nav">
-            <a href="#" class="rg-image-nav-prev">Previous Image</a>
-            <a href="#" class="rg-image-nav-next">Next Image</a>
+          <button class="btn">
+            <i class="material-icons">bookmark</i>
+            <span>Bookmark</span>
+          </button>
+          <div class="icon-button" data-tooltip="More" data-tooltip-pos="left">
+            <i class="material-icons">more_horiz</i>
           </div>
-        </div>
-
-        <div class="rg-loading"></div>
-        <div class="rg-caption-wrapper" >
-          <div class="rg-caption">
-            <p>Hi</p>
+          <div class="chat-button" onClick="toggleChat()" data-tooltip="Toggle Chat" data-tooltip-pos="left">
+            <i class="material-icons">chat</i>
           </div>
         </div>
       </div>
-    </script>
-    <div class="container">
-      <div id="rg-gallery" class="rg-gallery" >
-        
-          <div class="rg-thumbs"  style="max-width:100%;margin:10px;">
-            <!-- Elastislide Carousel Thumbnail Viewer -->
-            <div class="es-carousel-wrapper">
-              
-              <div class="es-carousel">
-                <ul>
-                  <script>
 
-                    
-                  </script>
-                  
-            
-            <li><a href="#"><img src="/static/img/tool-001.png" data-large="/static/img/alien-001.png" alt="" data-description="alien-001" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-002.png" data-large="/static/img/alien-002.png" alt="" data-description="alien-002" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-003.png" data-large="/static/img/alien-003.png" alt="" data-description="alien-003" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-004.png" data-large="/static/img/alien-004.png" alt="" data-description="alien-004" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-005.png" data-large="/static/img/alien-005.png" alt="" data-description="alien-005" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-006.png" data-large="/static/img/alien-006.png" alt="" data-description="alien-006" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-007.png" data-large="/static/img/alien-007.png" alt="" data-description="alien-007" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-008.png" data-large="/static/img/alien-008.png" alt="" data-description="alien-008" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-009.png" data-large="/static/img/alien-009.png" alt="" data-description="alien-009" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-010.png" data-large="/static/img/alien-010.png" alt="" data-description="alien-010" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-011.png" data-large="/static/img/alien-011.png" alt="" data-description="alien-011" /></a></li>
-            
-            <li><a href="#"><img src="/static/img/tool-012.png" data-large="/static/img/alien-012.png" alt="" data-description="alien-012" /></a></li>
-            
+      
+      </div>
 
 
 
-                </ul>
-          
-              </div>
-              <div class="es-nav">
-                <span class="es-nav-prev">Previous</span>
-                <span class="es-nav-next">Next</span>
-              </div>
-              
-            </div>
-            
-            <!-- End Elastislide Carousel Thumbnail Viewer -->
-          </div><!-- rg-thumbs -->
-        </div><!-- rg-gallery -->
-
-<frame src="http://138.68.83.180/app/room/" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="520"></iframe>
-
-     
-
-        <div class="video-wrapper" style="display:all;">
+            <div class="video-wrapper" style="display:all;margin:1%;">
           
   <video></video>
 
@@ -293,8 +240,13 @@
   <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script>
 <script src='https://unpkg.com/plyr@3'></script>
 <script >
-document.addEventListener('DOMContentLoaded', () => {
-  const source = 'http://161.35.14.248:6969/static/uploads/default/default/6f33144a-8b9a-47de-9df6-d47fe757ba71/stream.m3u8';
+
+function changeVideo(url) {
+
+
+  current = url;
+
+  const source = url;
   const video = document.querySelector('video');
 
   // For more options see: https://github.com/sampotts/plyr/#options
@@ -317,50 +269,118 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  player.play()
   // Expose player so it can be used from the console
   window.player = player;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const source = document.getElementById('stream').value;
+  const video = document.querySelector('video');
+
+  // For more options see: https://github.com/sampotts/plyr/#options
+  // captions.update is required for captions to work with hls.js
+  const player = new Plyr(video, { captions: { active: true, update: true, language: 'en' } });
+
+  if (!Hls.isSupported()) {
+    video.src = source.value;
+  } else {
+    // For more Hls.js options, see https://github.com/dailymotion/hls.js
+    const hls = new Hls();
+    hls.loadSource(source);
+    hls.attachMedia(video);
+    window.hls = hls;
+
+    // Handle changing captions
+    player.on('languagechange', () => {
+      // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+      setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+    });
+  }
+
+  // Expose player so it can be used from the console
+  window.player = player;
+  
+
 });
 </script>
 
-</div>       <div class="video-info">
-          
-           <div class="video-summary">
-             <div class="video-text">
-              <div class="video-title">Secret Gallery</div>
-              <div class="video-category">
-                <i class="material-icons">gamepad</i>
-                <a>UFO CASE ALIEN</a>
-              </div>
-            </div>
-            
-          
-          </div>
-          
-          <!--//div class="video-stats">
-            <div class="icon-button red" data-tooltip="Watching Now" data-tooltip-pos="down-left">
-              <i class="material-icons">people</i>
-              <span>107</span>
-            </div>
-            <div class="icon-button" data-tooltip="Total Views" data-tooltip-pos="down-left">
-              <i class="material-icons">visibility</i>
-              <span>2,606</span>
-            </div>
-            <div class="icon-button">
-              <i class="material-icons">share</i>
-              <span>Share</span>
-            </div>
-            <div class="icon-button dropdown-toggle">
-              <i class="material-icons">more_horiz</i>
-              <span>More</span>
-            </div>
-          </div -->
-          
-        </div>
-        
+</div>    
       </div>
       <div class="channel-body">
-        <p><em>more data</em></p>
+        <noscript>
+      <style>
+        .es-carousel ul{
+          display:block;
+        }
+      </style>
+    </noscript>
+    
+    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">  
+      <div  style="display:all;margin:1%;"  class="rg-image-wrapper">
+
+            
+          <div class="rg-image">
+          <iframe src="http://138.68.83.180/app/room/" frameborder="0" style="width:100%;min-height:470px;" id="rooms" allowfullscreen="true" scrolling="no"></iframe></div>
+          <div class="rg-image-nav">
+            <a href="#" class="rg-image-nav-prev">Previous Image</a>
+            <a href="#" class="rg-image-nav-next">Next Image</a>
+          </div>
+        </div>
+
+        <div class="rg-loading"></div>
+        <div class="rg-caption-wrapper" >
+          <div class="rg-caption">
+            <p>Hi</p>
+          </div>
+        </div>
       </div>
+    </script>
+    <div >
+      <div id="rg-gallery" class="rg-gallery" style="display:all;margin:1%;" >
+        
+          <div class="rg-thumbs" >
+            <!-- Elastislide Carousel Thumbnail Viewer -->
+            <div class="es-carousel-wrapper">
+              
+              <div class="es-carousel">
+                <ul>
+                  <script>
+
+                    
+                  </script>
+                  
+            
+      {% for e in data['resources'] %}
+            <li><a href="#"><img src="/static/img/tool-001.png" data-large="/static/img/tool-001.png" alt="" data-description="" /></a></li>
+      {% endfor %}
+            
+
+
+                </ul>
+          
+              </div>
+              <div class="es-nav">
+                <span class="es-nav-prev">Previous</span>
+                <span class="es-nav-next">Next</span>
+              </div>
+              
+            </div>
+            
+            <!-- End Elastislide Carousel Thumbnail Viewer -->
+          </div><!-- rg-thumbs -->
+        </div><!-- rg-gallery -->
+
+      </div>
+      <div class="stream-container"  style="display:all;margin:1%;" >
+    <div >
+  
+     
+      {% for e in data['resources'] %}
+          <li><a href="#"  onclick=changeVideo('{{e}}') data-large="{{e}}" alt="" data-description="alien-012" style="overflow:hidden;">{{e[100:]}}</a></li>
+
+      {% endfor %}
     </div>
 
     {% include 'includes/chat.html' %}
@@ -375,3 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <!-- partial -->
 <script  src="/static/js/script.js"></script>
+<script>
+  
+  toggleChat()
+  toggleChat()
+</script>

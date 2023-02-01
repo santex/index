@@ -217,13 +217,7 @@ $(function() {
         
         $('<img/>').load( function() {
           var x = window.innerWidth * 0.7;
-          $rgGallery.find('div.rg-image').empty().append('<iframe src="' + largesrc + '" style="width:'+x+'px;height:320px;max-width:100%"  />');
-          
-          //$($rgGallery.find('div.rg-image')).attr('srv', largesrc);
-          
-          
-          if( title )
-            $rgGallery.find('div.rg-caption').show().children('p').empty().text( title );
+          $rgGallery.find('div.rg-caption').show().children('p').empty().text( title )
           
           $loader.hide();
           

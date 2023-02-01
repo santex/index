@@ -21,7 +21,7 @@ USE_TEMPLATE = 1
 
 # HLS default values
 HLS_LIST_SIZE = 0
-HLS_TIME = 10
+HLS_TIME = 4
 HLS_ALLOW_CACHE = 1
 
 

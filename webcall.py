@@ -1,7 +1,7 @@
 import json, requests, urllib3, argparse, os
 urllib3.disable_warnings()
 
-def populateJson(nameSearchTerm="", limit=100, operator="or"):
+def populateMeaning(nameSearchTerm="", limit=100, operator="or"):
     return {
   "size": limit,
   "query": {
@@ -60,6 +60,24 @@ def populateJson(nameSearchTerm="", limit=100, operator="or"):
   }
 }
 
+def populateResources(nameSearchTerm="", limit=100, operator="or"):
+    return {
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "query_string": {
+              "query": "hls:*"
+            }
+          }
+        ]
+      }
+    },  
+    "_source":['hls','url'],
+    "size": 5000,
+    "from": 0
+  }
+
 def main():
   parser = argparse.ArgumentParser()
   
@@ -73,7 +91,7 @@ def main():
       default="desert+water",
       help="elasticsearch index to query")
   parser.add_argument('--limit',
-      default="1000",
+      default="0",
       help="response size")
 
   esport = os.environ.get('ELASTIC_PORT')
@@ -82,7 +100,7 @@ def main():
   requestHeaders = {'user-agent': 'my-python-app/0.0.1', 'content-type': 'application/json'}
   requestURL = 'http://%s:%s/%s/_search' % (eshost,esport,args.index)
 
-  requestBody = populateJson(args.search, args.limit, args.operator)
+  requestBody = populateMeaning(args.search, args.limit, args.operator)
   r = requests.get(requestURL,
                json=requestBody,
                auth=(os.environ.get('ELASTIC_USER'), os.environ.get('ELASTIC_PASS')),
@@ -90,6 +108,19 @@ def main():
                headers=requestHeaders)
   r = r.json()
   print(json.dumps(r , sort_keys = True, indent = 2, ensure_ascii = False))
+
+
+  requestURL = 'http://%s:%s/%s/_search' % (eshost,esport,"app-published")
+
+  requestBody = populateResources(args.search, args.limit, args.operator)
+  r = requests.get(requestURL,
+               json=requestBody,
+               auth=(os.environ.get('ELASTIC_USER'), os.environ.get('ELASTIC_PASS')),
+               verify=False,
+               headers=requestHeaders)
+  r = r.json()
+  print(json.dumps(r , sort_keys = True, indent = 2, ensure_ascii = False))
+  
 
 
 if __name__ == '__main__':

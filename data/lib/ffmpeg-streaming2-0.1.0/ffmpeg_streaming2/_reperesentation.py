@@ -1,15 +1,3 @@
-"""
-ffmpeg_streaming2.media
-~~~~~~~~~~~~
-
-Auto Generate Representation and Representation Object
-
-
-:copyright: (c) 2020 by Amin Yazdanpanah.
-:website: https://www.aminyazdanpanah.com
-:email: contact@aminyazdanpanah.com
-:license: MIT, see LICENSE for more details.
-"""
 from ._format import Format
 from ._media_property import Size, Bitrate
 

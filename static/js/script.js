@@ -18,8 +18,21 @@ function toggleDarkMode() {
   }
 }
 
+function ajustChat() {
+
+  if (!$(".app-container").hasClass("chat")) {
+    $('.container').css('width','100%');
+  
+    
+  }else{
+    $('.container').css('width','75%');
+  
+  }
+}
 function toggleChat() {
+
   $(".app-container").toggleClass("chat");
+   ajustChat()
 }
 
 $(".dropdown-toggle").on("click", function (e) {

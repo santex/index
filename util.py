@@ -1,23 +1,16 @@
-#!/usr/local/bin/python3
-#! -*- coding: utf-8-mb4 -*-
 from __future__ import absolute_import
+import json, requests, urllib3, argparse, os
+urllib3.disable_warnings()
 
-import sys
-import os, sys, csv, tqdm, urllib3
-import subprocess
+import os, sys, csv, tqdm, subprocess, json, requests, feedparser,  sqlalchemy, hashlib, enum, json, glob, pprint, xml.etree.ElementTree as ET
 from dotenv import load_dotenv
-import json
 from bs4 import BeautifulSoup
-import requests
-import xml.etree.ElementTree as ET
-import feedparser
 from os.path import abspath, join, dirname, exists
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
 from datetime import datetime
-import sqlalchemy, enum, json, glob
 from werkzeug.utils import secure_filename
-import hashlib
+
 
 headers_infos = """
 .:.
@@ -94,24 +87,6 @@ def rename_file(filename: str):
     updated_filename = f"{updated_filename}.{file_extension}"
 
     return updated_filename
-
-
-
-class Config:
-    """
-    Load environment variables and assign them to Config class
-    Make sure to add the required environment variables to .env file
-    """
-
-
-    SQLALCHEMY_DATABASE_URI = "sqlite:///data/db.sqlite3" # os.getenv("SQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_TRACK_MODIFICATIONS = bool(False)
-    AWS_ACCESS_KEY = os.environ.get("AWS_ACCESS_KEY")
-    AWS_ACCESS_SECRET = os.environ.get("AWS_ACCESS_SECRET")
-    S3_BUCKET_NAME = os.environ.get("S3_BUCKET_NAME")
-    S3_BUCKET_BASE_PATH = os.environ.get("S3_BUCKET_BASE_PATH")
-    S3_BUCKET_BASE_URL = os.environ.get("S3_BUCKET_BASE_URL")
-
 
 
 class ExifTool(object):
@@ -386,11 +361,132 @@ class ElasticSearchUtil:
             ignore=400,
         )
 
-def insert_one_data(self,_index, data):
-    # index and doc_type you can customize by yourself
-    res = self.es.index(index=_index, doc_type='_doc',  body=data)
-    # index will return insert info: like as created is True or False
-    print(res)
+    def insert_one_data(self,_index, data):
+      # index and doc_type you can customize by yourself
+      res = self.es.index(index=_index, doc_type='_doc',  body=data)
+      # index will return insert info: like as created is True or False
+      print(res)
+
+
+    def populateMeaning(self,nameSearchTerm="", limit=100, operator="or"):
+      return {
+      "size": limit,
+      "query": {
+        "multi_match": {
+          "query": nameSearchTerm,
+          "fields": [
+            "domain",
+            "topic",
+            "tags",
+            "title",
+            "type",
+            "source",
+            "tags"
+          ],
+          "operator":operator,
+          "type": "best_fields"
+        }
+      },
+      "aggs": {
+        "Domain Filter": {
+          "terms": {
+            "field": "domain.keyword",
+            "size": 10
+          }
+        },
+        "Topic Filter": {
+          "terms": {
+            "field": "topic.keyword",
+            "size": 10
+          }
+        },
+        "Tags Filter": {
+          "terms": {
+            "field": "tags.keyword",
+            "size": 3
+          }
+        },
+        "Title Filter": {
+          "terms": {
+            "field": "title.keyword",
+            "size": 10
+          }
+        },
+        "Type Filter": {
+          "terms": {
+            "field": "type.keyword",
+            "size": 10
+          }
+        },
+        "Source Filter": {
+          "terms": {
+            "field": "source.keyword",
+            "size": 10
+          }
+        }
+      }
+    }
+
+    def populateResources(self,nameSearchTerm="", limit=100, operator="or"):
+      return {
+        "query": {
+          "bool": {
+            "must": [
+              {
+                "query_string": {
+                  "query": "hls:*"
+                }
+              }
+            ]
+          }
+        },  
+        "_source":['hls','url'],
+        "size": 5000,
+        "from": 0
+      }
+
+    def callData(self,limit=100):
+
+      back = {'meaning':{},'resources':{}}
+      
+      esport = os.environ.get('ELASTIC_PORT')
+      eshost = os.environ.get('ELASTIC_HOST')
+      requestHeaders = {'user-agent': 'my-python-app/0.0.1', 'content-type': 'application/json'}
+      requestURL = 'http://%s:%s/%s/_search' % (eshost,esport,"_all")
+
+      """
+      
+      requestBody = self.populateMeaning("water",limit, "and")
+      r = requests.get(requestURL,
+                   json=requestBody,
+                   auth=(os.environ.get('ELASTIC_USER'), os.environ.get('ELASTIC_PASS')),
+                   verify=False,
+                   headers=requestHeaders)
+      r = r.json()      
+      ids = [d['_source']['topic'] for d in r['hits']['hits']]
+      back['meaning']=ids
+          
+      
+
+      print(json.dumps(r , sort_keys = True, indent = 2, ensure_ascii = False))
+
+      """
+      requestURL = 'http://%s:%s/%s/_search' % (eshost,esport,"app-published")
+
+      requestBody = self.populateResources("", 1000, "or")
+      r = requests.get(requestURL,
+                   json=requestBody,
+                   auth=(os.environ.get('ELASTIC_USER'), os.environ.get('ELASTIC_PASS')),
+                   verify=False,
+                   headers=requestHeaders)
+      r = r.json()
+      
+      ids = [d['_source']['hls'] for d in r['hits']['hits']]
+      back['resources']=ids
+      print(json.dumps(r , sort_keys = True, indent = 2, ensure_ascii = False))
+
+
+      return back
 
 def download_dataset(key):
     """Downloads the public dataset if not locally downlaoded
@@ -442,6 +538,7 @@ def generate_actions(key):
 def main():
     print("Creating an index...")
     ElasticSearchUtil().create_index(appname = "app")
+    data=ElasticSearchUtil().callData(1000)
     for u in RAW_DATA:            
       successes = 0        
       t = download_dataset(u)  
@@ -450,8 +547,12 @@ def main():
         successes += ok
           
 
+    return data
+
+
 if __name__ == "__main__":
-    main()
+    d = main()
+    pprint.pprint(d)
     get_news_test(publication="me") 
     feed = ReadRss(get_source(publication="me"), headers)
     print(str(feed))
