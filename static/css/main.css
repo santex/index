@@ -113,7 +113,7 @@ button {
   box-shadow: 0 0 6px 0 var(--primary-color-brighter);
 }
 .header .logo-wrapper .search-bar {
-  max-width: 500px;
+  max-width: 700px;
   margin-left: 15px;
   margin-right: 10px;
 }
@@ -152,12 +152,11 @@ button {
 .search-bar {
   width: 100%;
   height: 36px;
-  display: flex;
   position: relative;
   align-items: center;
 }
 .search-bar i {
-  top: 50%;
+  top: 30%;
   left: 6px;
   opacity: 0.3;
   position: absolute;
@@ -167,8 +166,8 @@ button {
   transition: all 0.2s ease-in;
 }
 .search-bar input {
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 80%;
   border: none;
   outline: none;
   color: inherit;
@@ -391,7 +390,7 @@ button {
   width: 100%;
   z-index: 2;
   position: fixed;
-  max-width: 350px;
+  max-width: 360px;
   overflow: hidden;
   border-left: solid 1px rgba(255, 255, 255, 0.1);
   background-color: var(--theme-color);

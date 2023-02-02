@@ -1,8 +1,42 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Search</title>
-  <link href="/static/bootswatch_simplex.css" rel="stylesheet">
+  <link href="/static/css/bootswatch_simplex.css" rel="stylesheet">
+    
+  <script>
+
+
+
+  function output(inp,inpid) {
+      var c = document.getElementById(inpid)
+      c.innerHTML = inp;
+  }
+
+  function syntaxHighlight(json) {
+      //json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+          var cls = 'number';
+          if (/^"/.test(match)) {
+              if (/:$/.test(match)) {
+                  cls = 'key';
+              } else {
+                  cls = 'string';
+              }
+          } else if (/true|false/.test(match)) {
+              cls = 'boolean';
+          } else if (/null/.test(match)) {
+              cls = 'null';
+          }
+          return '<span class="' + cls + '">' + match + '</span>';
+      });
+  }
+
+  var obj = {a:1, 'b':'foo', c:[false,'false',null, 'null', {d:{e:1.3e5,f:'1.3e5'}}]};
+  var str = JSON.stringify(obj, undefined, 4);
+
+
+  </script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,18 +61,29 @@
     </div>
   </div>
 </div>
+<style>
+p {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+</style>
 <div class="container" style="margin-top: 3.5em;">
   <div class="row">
     {% block body %}{% endblock %}
   </div>
 </div>
+
+
 <footer class="footer">
   <div class="container">
     <div class="media">
       <div class="media-left">
-        <img src="/static/img/ia_logo_small.png" alt="IA logo">
+        <img src="/static/img/ufo-002.png" alt="IA logo" width="60px;">
     </div>
-      <div class="media-body">
+      <div class="media-body"> a landing <a href="#">Production</a></p>
       </div>
     </div>
   </div>

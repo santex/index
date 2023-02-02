@@ -213,12 +213,15 @@ $(function() {
            
         var $thumb    = $item.find('img'),
           largesrc  = $thumb.data('large'),
+          hlssrc  = $thumb.data('hls'),
           title   = $thumb.data('description');
         
         $('<img/>').load( function() {
-          var x = window.innerWidth * 0.7;
-          $rgGallery.find('div.rg-caption').show().children('p').empty().text( title )
-          
+          var hi = document.getElementById("hls-info");
+          var disp = hlssrc.split(/\//)
+          $(hi).empty().text(disp.pop())
+          changeVideo(hlssrc)
+          window.player.play()
           $loader.hide();
           
           if( mode === 'carousel' ) {

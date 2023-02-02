@@ -1,3 +1,10 @@
+.name {
+  font-weight: 600;
+  margin-right: 5px;
+  color: var(--primary-color);
+  transition: all 0.2s ease-in;
+}
+
 .rg-image-wrapper{
   position:relative;
   padding:20px 30px;

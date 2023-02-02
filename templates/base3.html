@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Reverse Engineered Twitch.tv UI  (Responsive CSS Grid Experiment)</title>
+  
+  <script src='/static/js/jquery.min.js'></script>
+  
+  <link rel="stylesheet" href="/static/css/base.css">
+
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
+</head>
+  <body>
+  <div class="container">
+  <div class="bar">
+  <div class="nav">
+  <div class="logo">
+    <img src="http://161.35.14.248:6969/static/img/logo.png" height="56px" />
+  </div>
+
+  <div class="item">Cases</div>
+  <div class="item" id="selected">Disclosure</div>
+  <div class="item">Streams</div>
+  <div class="item">Videos</div>
+  <div class="item">Images</div>
+  <div class="item">Feature</div>
+  <div class="item">Documents</div>
+  </div>
+  </div>
+  <div class="main">
+  <div class="streamer-bar">
+  <div class="streamer-bar-title">
+    <p class="desktop-title">Disclosure Topic's</p>
+    <p class="mobile-title">❤</p>
+  </div>
+  <div class="followed-channels">
+    <div class="followed-channel">
+      <div class="profile-image">
+        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/a_seagull-profile_image-4d2d235688c7dc66-70x70.png" alt="A_Seagull" />
+      </div>
+      <div class="profile-info">
+        <p class="profile-username">A_Seagull</p>
+        <p class="profile-topic-title">Overwatch</p>
+      </div>
+      <div class="profile-viewers">
+        <div class="live-icon"></div>
+        <div class="viewer-count">4.1K</div>
+      </div>
+    </div>
+    <div class="followed-channel">
+      <div class="profile-image">
+        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/f915e077-b9a7-4a85-a5ea-7d51b2f600cb-profile_image-70x70.png" alt="Fitzyhere" />
+      </div>
+      <div class="profile-info">
+        <p class="profile-username">Fitzyhere</p>
+        <p class="profile-topic-title">Overwatch</p>
+      </div>
+      <div class="profile-viewers">
+        <div class="live-icon"></div>
+        <div class="viewer-count">685</div>
+      </div>
+    </div>
+
+   
+    </div>
+  <br />
+  <div class="recommended-channels">
+    <div class="streamer-bar-title">
+      <p class="desktop-title">Featured Investigators</p>
+      <p class="mobile-title"><i class="fa fa-file-video-o" aria-hidden="true"></i></p>
+    </div>
+    <div class="followed-channels">
+      <div class="followed-channel">
+        <div class="profile-image">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/a5e9679a-6b4d-436c-9e78-d801e42555fc-profile_image-70x70.png" alt="Princess" />
+        </div>
+        <div class="profile-info">
+          <p class="profile-username">PrinzessinDaenerys</p>
+          <p class="profile-topic-title">Overwatch</p>
+        </div>
+        <div class="profile-viewers">
+          <div class="live-icon"></div>
+          <div class="viewer-count">1.1K</div>
+        </div>
+      </div>
+
+      <div class="followed-channel">
+        <div class="profile-image" style="filter: grayscale(100%) contrast(85%);">
+          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/lara6683-profile_image-4aa7e08e70c72924-70x70.jpeg" alt="Lara" />
+        </div>
+        <div class="profile-info">
+          <p class="profile-username">lara6683</p>
+          <p class="profile-topic-title">
+            3 new videos
+          </p>
+        </div>
+        <div class="profile-viewers">
+          <div class="viewer-count"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <small>Show More</small>
+  <br />
+  </div>
+
+  <div class="stream-content">
+  <!-- <div class="home-header">
+  <h1 class="home-title">Home</h1>
+  </div> -->
+  <div class="topics">
+    <h3>Disclosure <span class="title-highlight">topics</span></h3>
+    <div class="topics-carousel">
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/./Animal%20Crossing:%20New%20Horizons-285x380.jpg" alt="Animal Crossing" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">Animal Crossing: New Horizons</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>Simulation</span>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-285x380.jpg" alt="League of Legends" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">League of Legends</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>MOBA</span>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/World%20of%20Warcraft-285x380.jpg" alt="World of Warcraft" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">World of Warcraft</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>MMORPG</span>
+          <span>RPG</span>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/Overwatch-285x380.jpg" alt="Overwatch" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">Overwatch</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>FPS</span>
+          <span>MOBA</span>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/Mario%20Kart%208-285x380.jpg" alt="Mario Kart 8" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">Mario Kart 8</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>Driving/Racing</span>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="topic-cover">
+          <img src="https://static-cdn.jtvnw.net/ttv-boxart/VALORANT-285x380.jpg" alt="Valorant" />
+        </div>
+        <div class="topic-info">
+          <p class="topic-title">VALORANT</p>
+          <p class="topic-viewership"></p>
+        </div>
+        <div class="topic-categories">
+          <span>FPS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider">
+    <div class="bar"></div>
+    <div class="show-more">
+      Show more <i class="fa fa-chevron-down"></i>
+    </div>
+    <div class="bar"></div>
+  </div>
+  <div class="streams">
+
+  </div>
+
+
+  <script src='/static/js/flickity.pkgd.js'></script>
+  </body>
+  </html>

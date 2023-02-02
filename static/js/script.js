@@ -25,7 +25,9 @@ function ajustChat() {
   
     
   }else{
-    $('.container').css('width','75%');
+    var w = window.innerWidth - 370
+   
+    $('.container').css('width',w);
   
   }
 }

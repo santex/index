@@ -148,11 +148,11 @@ def prepare_probe(path,doc):
   
   current_dir = path
   ffprobe.save_as_json(os.path.join(current_dir, 'probe.json'))
-
-
+  all=ffprobe.all()
+  return all
   
   
-def prepare_hls(doc):
+def prepare_hls(doc,vwidth):
 
   
 
@@ -169,7 +169,20 @@ def prepare_hls(doc):
   _4k    = Representation(Size(3840, 2160), Bitrate(17408 * 1024, 320 * 1024))
 
   hls = video.hls(Formats.h264())
-  hls.representations(_480p, _720p)
+  if vwidth > 2560:
+    hls.representations(_1080p, _2k , _4k)
+  elif vwidth > 1920:
+    hls.representations(_720p, _1080p,  _2k)
+  elif vwidth > 1280:
+    hls.representations( _1080p)
+  elif vwidth > 854:
+    hls.representations(_480p, _720p)
+  elif vwidth > 640:
+    hls.representations(_480p, _720p)
+  else:
+    hls.representations(_480p)
+  
+  
   hls.output("{}/{}/{}".format(doc['target'],'hls',doc['basename'].replace('.mp4','.m3u8')))
 
   
@@ -225,7 +238,7 @@ def upload(request,target):
               "content_length":length,
               "url":"{}/{}".format(base,destination[2:]),
               "hls":"",
-              "tags":re.findall(r'\w+', basename),
+              "tags":re.split(r'\W+', basename),
               "upload_status":200}
 
         
@@ -240,20 +253,21 @@ def upload(request,target):
         
               
         basen=str(data["basename"])
+        data["probe"]=prepare_probe(data["target"],data)
+        pprint.pprint(data)
+        vwidth = data["probe"]["streams"][0]["width"]
+        #
         if data["basename"].endswith(".mp4"):
           data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".mp4",".m3u8"))
-          prepare_hls(data)
-          prepare_probe(data["target"],data)
-
+          prepare_hls(data,vwidth)
+          
         if data["basename"].endswith(".mov"):
           data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".mov",".m3u8"))
-          prepare_hls(data)
-          prepare_probe(data["target"],data)
+          prepare_hls(data,vwidth)
 
         if data["basename"].endswith(".AVI"):
           data["hls"]="{}/{}/hls/{}".format(data["host"],data["target"][2:],basen.replace(".AVI",".m3u8"))
-          prepare_hls(data)
-          prepare_probe(data["target"],data)
+          prepare_hls(data,vwidth)
           
         ElasticSearchUtil().add_to_index("app","published",data)
         
