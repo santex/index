@@ -211,7 +211,16 @@
 <p>Window height: <span id="height"></span></p>
 <p>Window width: <span id="width"></span></p>
 </div>
-<br>
+
+      <br>
+      
+         <select onchange=changeVideo(this.value); style="margin-left:2%;width:97%;">
+
+         {% for e in data['resources'] %}
+            <option  data-large="{{e}}" alt="" data-description="alien-012" style="overflow:hidden;">{{e}}</option>
+          {% endfor %}  
+         </select>
+         
                <div class="video-wrapper" style="display:all;margin:2%;">
    
   <video></video>
@@ -358,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <!-- End Elastislide Carousel Thumbnail Viewer -->
           </div><!-- rg-thumbs -->
+          
         </div><!-- rg-gallery -->
 
       </div>

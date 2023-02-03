@@ -185,7 +185,31 @@ def prepare_hls(doc,vwidth):
   
   hls.output("{}/{}/{}".format(doc['target'],'hls',doc['basename'].replace('.mp4','.m3u8')))
 
-  
+
+def prepare_short(url):
+
+
+    thost = os.environ.get('TINYFICATION_HOST')
+    tport = os.environ.get('TINYFICATION_HOST')
+    api = 'url'
+    requestHeaders = {'user-agent': 'my-python-app/0.0.1', 'content-type': 'application/json'}
+    requestURL = 'http://%s:%s/%s' % (thost,tport,api)
+
+
+    resp = requests.post(requestURL,
+                         json=search_request,
+                         verify=False,
+                         headers=requestHeaders)
+
+
+    if resp.status_code != 200:
+        print(resp.content)
+        return resp.status_code
+
+    content = resp.json()
+
+    return content
+
 def upload(request,target):
     """Handle the upload of a file."""
     form = request.form
@@ -238,7 +262,7 @@ def upload(request,target):
               "content_length":length,
               "url":"{}/{}".format(base,destination[2:]),
               "hls":"",
-              "tags":re.split(r'\W+', basename),
+              "tags":re.split(r'\W+', basename.replace("_", "-")),
               "upload_status":200}
 
         
@@ -302,6 +326,20 @@ def add_filename():
 
 
   return data
+
+
+@app.route('/q/<id_type>/<path:identifier>', methods=['GET'])
+def query(id_type, identifier, do_redirect=False):
+
+  
+    info = [id_type, identifier,do_redirect]
+    if info is None:
+        abort(404)
+    if do_redirect:
+        return redirect(info['files'][0]['url'])
+    if request_wants_json():
+        return jsonify(info)
+    return render_template('search.html',found=info,query=identifier)
 
 
 def do_search(q, limit=200,index="_all", do_highlight=False, do_files=False):

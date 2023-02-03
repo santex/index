@@ -32,14 +32,11 @@
     /* Custom container */
     .main-content {
       margin: 0 auto;
-      background-color:#fff; 
-    
     }
     /* Custom container */
     .app-container {
       margin: 0 auto;
-      background-color:#fff; 
-    
+      
     }
     .container-narrow {
         margin: 0 auto;
@@ -75,15 +72,42 @@
               </div>
         <div class="desktop-search search-bar">
           <input type="text" placeholder="Search" />
-          <i class="material-icons">search</i>
-          <input type="hidden" placeholder="Stream" id="stream" value="http://161.35.14.248:6969/static/uploads/default/default/c5634316-475c-432c-b1f4-254ba23ae878/hls/20230131103628--out-signs_from_the_sky-wnnc9e5xpw0_merged.m3u8" />
+          <i class="material-icons" style="margin-top:6px">search</i>
+          <input type="hidden" placeholder="Stream" id="stream" value="" />
           
-          <i class="material-icons">stream</i>
-          
-        </div>
-      </div>
+          &nbsp;
+        <div class=" channel-nav chat-feed" style="width:100%;">
+          <a class="active">
+            <span class="name">Streams</span>&nbsp;|
+          </a>
+          <a>
+            <span class="name">Videos</span>&nbsp;|
+          </a>
+          <a>
+            <span class="name">Images</span>&nbsp;|
+          </a>
+          <a>
+            <span class="name">Investigators</span>&nbsp;|
+          </a>
+          <a>
+            <span class="name">Rooms</span>&nbsp;
+          </a>
+   </div>
+   </div>
 
-      <div class="nav">
+          <button class="btn" style="zoom:70%">
+            <i class="material-icons">bookmark</i>
+            <span>Bookmark</span>
+          </button>
+         &nbsp;
+          <div class="chat-button" onClick="toggleChat()" data-tooltip="Toggle Chat" data-tooltip-pos="left">
+            <i class="material-icons">chat</i>
+          </div>
+      
+        </div>
+    
+         
+        <div class="nav">
         <div class="dropdown">
           <i class="material-icons dropdown-toggle" data-tooltip="More" data-tooltip-pos="left">more_horiz</i>
           <div class="dropdown-content">
@@ -174,73 +198,38 @@
                 <i class="material-icons">email</i>
                 <span>Messages</span>
               </a>
-              <a class="dropdown-link">
-                <i class="material-icons">credit_card</i>
-                <span>Subscriptions</span>
-              </a>
-              <a class="dropdown-link">
-                <i class="material-icons">local_mall</i>
-                <span>Inventory</span>
-              </a>
+              
             </div>
           </div>
         </div>
       </div>
 
     </div>
+    
+<div style="display:none;">
+<p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+</div>
 
-    <div class="page-content" >
-      <div class="channel-header">
-        <div class="channel-nav">
-         
-          <a class="active">
-            <strong>20</strong>
-            <span>Videos</span>
-          </a>
-          <a>
-            <strong>7</strong>
-            <span>Images</span>
-          </a>
-          <a>
-            <strong>1</strong>
-            <span>Collection</span>
-          </a>
-        </div>
-
-        <div class="channel-header-fixed-buttons">
-          <button class="btn">
-            <i class="material-icons">favorite</i>
-            <span>Follow</span>
-          </button>
-          <button class="btn">
-            <i class="material-icons">credit_card</i>
-            <span>Subscribe</span>
-          </button>
-          <button class="btn">
-            <i class="material-icons">stars</i>
-            <span>Get Bits</span>
-          </button>
-          <div class="icon-button" data-tooltip="More" data-tooltip-pos="left">
-            <i class="material-icons">more_horiz</i>
-          </div>
-          <div class="chat-button" onClick="toggleChat()" data-tooltip="Toggle Chat" data-tooltip-pos="left">
-            <i class="material-icons">chat</i>
-          </div>
-        </div>
-      </div>
-
+      <br>
       
-      </div>
+         <select onchange=changeVideo(this.value); style="margin-left:2%;width:97%;">
 
-
-
-            <div class="video-wrapper" style="width:67%;display:all;margin-left:10px;">
-          
+         {% for e in data['resources'] %}
+            <option  data-large="{{e}}" alt="" data-description="alien-012" style="overflow:hidden;">{{e}}</option>
+          {% endfor %}  
+         </select>
+         
+               <div class="video-wrapper" style="display:all;margin:2%;">
+   
   <video></video>
+<div style="display:none;">
+ {% for e in data['resources'] %}
+          <li><a href="#"  onclick=changeVideo('{{e}}') data-large="{{e}}" alt="" data-description="alien-012" style="overflow:hidden;">{{e[100:]}}</a></li>
 
-
-<frame src="http://138.68.83.180/app/room/" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="520"></iframe>
-
+      {% endfor %}
+</div>
 <script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
 
   <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script>
@@ -307,51 +296,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Expose player so it can be used from the console
   window.player = player;
+  
+
 });
 </script>
-
-</div>       <div class="video-info">
-          
-           <div class="video-summary">
-             <div class="video-text">
-              <div class="video-title">Secret Gallery</div>
-              <div class="video-category">
-                <i class="material-icons">topicpad</i>
-                <a>UFO CASE ALIEN</a>
-              </div>
-            </div>
-            
-          
-          </div>
-          
-          <!--//div class="video-stats">
-            <div class="icon-button red" data-tooltip="Watching Now" data-tooltip-pos="down-left">
-              <i class="material-icons">people</i>
-              <span>107</span>
-            </div>
-            <div class="icon-button" data-tooltip="Total Views" data-tooltip-pos="down-left">
-              <i class="material-icons">visibility</i>
-              <span>2,606</span>
-            </div>
-            <div class="icon-button">
-              <i class="material-icons">share</i>
-              <span>Share</span>
-            </div>
-            <div class="icon-button dropdown-toggle">
-              <i class="material-icons">more_horiz</i>
-              <span>More</span>
-            </div>
-          </div -->
-          
-        </div>
-        
+ 
       </div>
+      
       <div class="channel-body">
-        <p><em>more data</em></p>
-      </div>
-      <div class="stream-container"  style="height:auto;margin:10px;">
-    <div >
-  <noscript>
+        <noscript>
       <style>
         .es-carousel ul{
           display:block;
@@ -360,11 +313,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </noscript>
     
     <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">  
-      <div  style="display:none;"  class="rg-image-wrapper">
+      <div  style="display:none;margin:1%;"  class="rg-image-wrapper">
 
             
-          <div class="rg-image"></div>
-          <!--iframe src="http://138.68.83.180/app/room/" frameborder="0" allowfullscreen="true" scrolling="no"></iframe //-->
+          <div class="rg-image">
+          <iframe src="http://138.68.83.180/app/room/" frameborder="0" style="margin-right:1%;width:100%;min-height:470px;" id="rooms" allowfullscreen="true" scrolling="no"></iframe></div>
           <div class="rg-image-nav">
             <a href="#" class="rg-image-nav-prev">Previous Image</a>
             <a href="#" class="rg-image-nav-next">Next Image</a>
@@ -374,13 +327,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="rg-loading"></div>
         <div class="rg-caption-wrapper" >
           <div class="rg-caption">
-            <p>Hi</p>
+              <div style="border:1px #000 solid;display:all;width:100%;zoom:75%;" >
+<address id="hls-info">hlssrc.</address>
+</div>  
           </div>
         </div>
       </div>
     </script>
-    <div class="container" >
-      <div id="rg-gallery" class="rg-gallery" >
+    <div >
+      <div id="rg-gallery" class="rg-gallery" style="display:all;margin:2%;" >
         
           <div class="rg-thumbs" >
             <!-- Elastislide Carousel Thumbnail Viewer -->
@@ -395,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   
             
       {% for e in data['resources'] %}
-            <li><a href="#"><img src="/static/img/tool-001.png" data-large="/static/img/tool-001.png" alt="" data-description="" /></a></li>
+            <li><a href="#"><img src="/static/img/tool-001.png" data-large="/static/img/tool-001.png" alt="" data-description="" data-hls="{{e}}"  /></a></li>
       {% endfor %}
             
 
@@ -412,24 +367,35 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <!-- End Elastislide Carousel Thumbnail Viewer -->
           </div><!-- rg-thumbs -->
+          
         </div><!-- rg-gallery -->
 
-     
-      {% for e in data['resources'] %}
-          <li><a href="#"  onclick=changeVideo('{{e}}') data-large="{{e}}" alt="" data-description="alien-012" style="overflow:hidden;">{{e[100:]}}</a></li>
-
-      {% endfor %}
-    </div>
-
-    {% include 'includes/chat.html' %}
-
-
+      </div>
+            
+      {% include 'includes/chat.html' %}
 
     </div>
-  </div>
 
   <div class="footer">
   </div>
 </div>
 <!-- partial -->
 <script  src="/static/js/script.js"></script>
+<script>
+
+  const heightOutput = document.querySelector("#height");
+  const widthOutput = document.querySelector("#width");
+
+  function reportWindowSize() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;    
+    ajustChat()
+  }
+
+  window.onresize = reportWindowSize;
+
+
+  
+  toggleChat()
+  toggleChat()
+</script>

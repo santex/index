@@ -35,8 +35,8 @@ def populateMeaning(nameSearchTerm="", limit=100, operator="or"):
     },
     "Tags Filter": {
       "terms": {
-        "field": "tags.keyword",
-        "size": 3
+        "field": "tags",
+        "size": 30
       }
     },
     "Title Filter": {
